@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from OnlineBlogging import views
-from admin import views
+from OnlineBlogging import views
 
 urlpatterns = [
-
-    path('admin', include('admin.urls') )
+    path('admin', include('admin.urls') ),
+    
+    path('', views.home, name='home'),
+    path('contact', views.contactPage, name='contact'),
+    path('laravel', views.category, name='category')
 ]
