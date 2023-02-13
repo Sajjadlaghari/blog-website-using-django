@@ -22,7 +22,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title text-center fw-bold "><h3 class="text-center fw-bold pb-5">Upload New Blog</h3></h5>
-                  <form method="post" action="/admin/news" enctype="multipart/form-data">
+                  <form method="post" action="/admin/add-new-blog" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row mb-3">
                       <label class="col-sm-2 col-form-label"></label>
@@ -47,13 +47,19 @@
                           <input type="file" name="image" class="form-control p-3" id="floatingInput" placeholder="name@example.com">
                         </div>
 
-                        <label class="col-sm-2 col-form-label">Your Good Name</label>
-                        <div class="form-floating mb-3">
-                          <input type="text" name="good_name" class="form-control" id="floatingPassword" placeholder="Password">
-                          <label for="floatingPassword">Your Name</label>
+                        <label class="col-sm-2 col-form-label">Select blog Category</label>
+                        <div class="form-floating mb-1">
+                 
+                          <select class="form-control" name="categori_id">
+                            {% for category in categories %}
+                              <option value="{{ category.id }}">{{category.category_name}}</option>
+                            {% endfor %}
+                          </select>
+                          {% comment %} <input type="text" name="categori_id" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Your Name</label> {% endcomment %}
                         </div>
 
-                        <div class="form-floating mb-3 text-center">
+                        <div class="form-floating mb-3 mt-3 text-center">
                           <button type="submit" class="btn btn-success">Upload Blog</button>
                         </div>
                       </div>

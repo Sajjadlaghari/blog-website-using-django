@@ -17,11 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 from OnlineBlogging import views
 from OnlineBlogging import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin', include('admin.urls') ),
     
     path('', views.home, name='home'),
+    path('login', views.Login, name='login'),
     path('contact', views.contactPage, name='contact'),
     path('laravel', views.category, name='category')
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

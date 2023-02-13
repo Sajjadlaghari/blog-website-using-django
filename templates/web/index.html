@@ -31,7 +31,7 @@
                 <div class="input-group">
                   <input class="form-control" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email Address...." required=""/>
                   <span class="input-group-btn">
-                    <i class="fas fa-paper-plane"></i>
+                    {% comment %} <i class="fas fa-paper-plane"></i> {% endcomment %}
                     <input type="submit" value="Subscribe" class="btn btn-success" name="subscribe" id="mc-embedded-subscribe" class="button"/>
                   </span>
                 </div>
@@ -46,13 +46,13 @@
     </section>
     
     
-    <section class="latest-posts container p-0 mb-50">
-      <div class="special-heading mb-4">
+    <section class="container-fluid ml-5 p-5 mb-50">
+      <div class="special-heading mb-4 ">
         <div class="row align-items-top box-shadow latest-posts-inner mb-4">
-          <div class="col-md-9">
-            <h1><span>Our</span> Latest Posts </h1>
+          <div class="col-md-9 text-right ml-5" style="padding-left: 40px;">
+            <h1 class="ml-5"><span >Our</span> Latest Posts </h1>
           </div>
-          <div class="col-md-3 text-right">
+          <div class="col-md-3 text-right ml-5">
             <h1><span>Our</span> Latest Posts </h1>
           </div>
         </div>
@@ -66,184 +66,58 @@
     
       
       
-      <div class="row align-items-top box-shadow latest-posts-inner mb-4">
-        <div class="col-md-9">
-         <div class="row mb-5">
-           <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-             <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-           </div>
-           <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-             <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-             <span class="desc">            
-             It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-             </span>
-       
-             <div class="post-details">
-               <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-               <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-               <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-             </div>
-           </div>
-         </div>
-         <div class="row mb-5">
+      <div class="row align-items-top box-shadow latest-posts-inner mb-4  ">
+        <div class="col-md-8 p-5 ">
+        {% for blog in blogs %}
+        <div class="row mb-5 shadow-lg p-2 justify-content-center" style="width:90%">
           <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
+            <img class="post-image img-fluid" src="{{ blog.blog_featured_image }}"/>
           </div>
           <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
+            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">{{blog.blog_title}} {{ data.category_id.category_name}}</p></a>
+            <span class="desc">          
+              {{ blog.blog_description|slice:":255"  }}  
             </span>
       
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-            </div>
-          </div>
-        </div> <div class="row mb-5">
-          <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-          </div>
-          <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-            </span>
-      
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-            </div>
-          </div>
-        </div> <div class="row mb-5">
-          <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-          </div>
-          <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-            </span>
-      
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-            </div>
-          </div>
-        </div> <div class="row mb-5">
-          <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-          </div>
-          <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-            </span>
-      
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-            </div>
-          </div>
-        </div> <div class="row mb-5">
-          <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-          </div>
-          <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-            </span>
-      
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
-            </div>
-          </div>
-        </div> <div class="row">
-          <div class="col-12 col-md-12 col-xl-4 col-sm-4">
-            <img class="post-image img-fluid" src="/static/webassets/img/course-3.jpg"/>
-          </div>
-          <div class="col-12 col-md-12 col-xl-8 col-sm-8">
-            <a href="post/how-to-increase-max-input-vars-in-php-ubuntuexample.html" class="h-link"><p class="latest-post-title h4">How to Increase max_input_vars in PHP Ubuntu?</p></a>
-            <span class="desc">            
-            It is a long   editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)  
-            </span>
-      
-            <div class="post-details">
-              <span class="author-name"><i class="fas fa-user"></i> Sajjad Ali</span>
-              <span class="date"><i class="fas fa-calendar-alt"></i> Jan 31, 2023 </span>
-              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">Laravel</span> </span>
+            <div class="post-details " style="margin-top:20px">
+              <span class="author-name"><i class="fas fa-user"></i>{{blog.user_id}} </span>
+              <span class="date"><i class="fas fa-calendar-alt"></i> {{ data.blog_posted_date}}</span>
+              <span class="category"><i class="fas fa-briefcase"></i> Category :  <span class="cat-name">{{ data.category_id}}</span> </span>
             </div>
           </div>
         </div>
+
+        {% endfor %}
+     
          
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
         <div class="row">
           <div class="col-md-12">
             <div class="list-boxes  box-shadow">
               <h4 class="title">Popular Posts</h4>
               <ul>
-                            <li><a href="post/how-to-convert-one-time-zone-to-anothor-time-zoneexample.html">PHP Convert Time from One Timezone to Another Example</a></li>
-                            <li><a href="post/how-to-integrate-paypal-payment-gateway-with-laravel54example.html">How to integrate paypal payment gateway with laravel 5.4</a></li>
-                            <li><a href="post/fullcalendar-get-start-and-end-date-by-click-eventexample.html">Fullcalendar get start and end date by click event</a></li>
-                            <li><a href="post/how-to-do-remember-me-function-at-login-option-in-laravel-5example.html">How to Do Remember me Function at Login Option in Laravel?</a></li>
-                            <li><a href="post/how-to-get-location-information-from-ip-address-in-laravel-example.html">How to get Country City Address from IP Address Laravel?</a></li>
-                            <li><a href="post/how-to-install-sublime-text-editor-3-in-ubuntuexample.html">How to Install Sublime Text Editor 3 in Ubuntu?</a></li>
-                            <li><a href="post/how-to-remove-empty-values-from-array-in-phpexample.html">How to Remove Empty Values from Array in PHP?</a></li>
-                            <li><a href="post/how-to-exclude-route-from-csrf-middleware-in-laravelexample.html">How to Exclude Route from CSRF Middleware in Laravel?</a></li>
-                            <li><a href="post/how-to-generate-slug-using-str-slug-helper-in-laravel-5example.html">How to create URL Slug in Laravel?</a></li>
-                            <li><a href="post/laravel-change-password-with-current-password-validation-exampleexample.html">Laravel - Change Password with Current Password Validation Example</a></li>
-                            <li><a href="post/how-to-recursively-change-the-permissions-of-files-and-directories-in-ubuntuexample.html">How to recursively change the permissions of files and directories in ubuntu?</a></li>
-                            <li><a href="post/angular-9-8-titlecase-pipe-example-titlecase-pipe-in-angularexample.html">Angular Titlecase  Pipe Example | Titlecase Pipe in Angular</a></li>
-                            </ul>
+                {% for blog in blogs %}
+                  <li><a href="post/how-to-convert-one-time-zone-to-anothor-time-zoneexample.html">{{blog.blog_title}}</a></li>
+                {% endfor %}
+                
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-md-12">
             <div class=" list-boxes  mb-50 box-shadow round-boxes">
               <h4 class="title">Categories</h4>
-              <ul>
-                        <li><a href="../category/laravelexample.html">Laravel</a></li>
-                        <li><a href="../category/angularexample.html">Angular</a></li>
-                        <li><a href="../category/phpexample.html">PHP</a></li>
-                        <li><a href="../category/jqueryexample.html">jQuery</a></li>
-                        <li><a href="../category/pythonexample.html">Python</a></li>
-                        <li><a href="../category/bootstrapexample.html">Bootstrap</a></li>
-                        <li><a href="../category/javascriptexample.html">Javascript</a></li>
-                        <li><a href="../category/mysqlexample.html">MySql</a></li>
-                        <li><a href="../category/ajaxexample.html">Ajax</a></li>
-                        <li><a href="../category/ubuntuexample.html">Ubuntu</a></li>
-                        <li><a href="../category/node-jsexample.html">Node JS</a></li>
-                        <li><a href="../category/htmlexample.html">HTML</a></li>
-                        <li><a href="../category/codeigniterexample.html">Codeigniter</a></li>
-                        <li><a href="../category/guest-postexample.html">Guest Post</a></li>
-                        <li><a href="../category/vuejsexample.html">Vue.JS</a></li>
-                        <li><a href="../category/react-jsexample.html">React JS</a></li>
-                        <li><a href="../category/gitexample.html">Git</a></li>
-                        <li><a href="../category/serverexample.html">Server</a></li>
-                        <li><a href="../category/installationexample.html">Installation</a></li>
-                        <li><a href="../category/jsonexample.html">JSON</a></li>
-                        <li><a href="../category/cssexample.html">CSS</a></li>
-                        <li><a href="../category/htaccessexample.html">.htaccess</a></li>
-                        <li><a href="../category/google-mapexample.html">Google Map</a></li>
-                        <li><a href="../category/sqlexample.html">SQL</a></li>
-                        <li><a href="../category/jquery-uiexample.html">JQuery UI</a></li>
-                        <li><a href="../category/google-apiexample.html">Google API</a></li>
-                        <li><a href="../category/typeahead-jsexample.html">Typeahead JS</a></li>
-                        <li><a href="../category/axiosexample.html">Axios</a></li>
-                        <li><a href="../category/socketioexample.html">Socket.io</a></li>
-                        <li><a href="../category/highchartsexample.html">Highcharts</a></li>
-                    </ul>
+              <div class="row p-2 shadow-lg">
+                {% for category in categories%}
+                <div class="col-md-4">
+                  <a href="../category/laravelexample.html"  class="text-dark fw-bold">{{category.category_name}}</a>
+                </div>
+                {% endfor %}
+               
+              </div>
             </div>
           </div>
         </div>
@@ -263,296 +137,12 @@
 
 
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="/static/webassets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            </p>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
-      <div class="container">
-
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Students</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Courses</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Events</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Trainers</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
-
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Why Choose Mentor?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Why Us Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box">
-              <i class="ri-store-line" style="color: #ffbb2c;"></i>
-              <h3><a href="">Lorem Ipsum</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3><a href="">Dolor Sitema</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3><a href="">Sed perspiciatis</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-              <h3><a href="">Magni Dolores</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3><a href="">Nemo Enim</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="">Eiusmod Tempor</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3><a href="">Midela Teren</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3><a href="">Pira Neve</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-anchor-line" style="color: #b2904f;"></i>
-              <h3><a href="">Dirada Pack</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-disc-line" style="color: #b20969;"></i>
-              <h3><a href="">Moton Ideal</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-base-station-line" style="color: #ff5828;"></i>
-              <h3><a href="">Verdo Park</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-              <h3><a href="">Flavor Nivelanda</a></h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Features Section -->
-
-    <!-- ======= Popular Courses Section ======= -->
-    <section id="popular-courses" class="courses">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Courses</h2>
-          <p>Popular Courses</p>
-        </div>
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="/static/webassets/img/course-1.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Web Development</h4>
-                  <p class="price">$169</p>
-                </div>
-
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="/static/webassets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                    <span>Antonio</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;50
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;65
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="course-item">
-              <img src="/static/webassets/img/course-2.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Marketing</h4>
-                  <p class="price">$250</p>
-                </div>
-
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="/static/webassets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-                    <span>Lana</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;35
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;42
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="/static/webassets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Content</h4>
-                  <p class="price">$180</p>
-                </div>
-
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="/static/webassets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-                    <span>Brandon</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;20
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;85
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-        </div>
-
-      </div>
-    </section><!-- End Popular Courses Section -->
 
     <!-- ======= Trainers Section ======= -->
     <section id="trainers" class="trainers">
-      <div class="container" data-aos="fade-up">
+      <div class="container-fluid p-5" data-aos="fade-up">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row p-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img src="/static/webassets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
